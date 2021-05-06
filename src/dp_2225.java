@@ -22,8 +22,6 @@ public class dp_2225 {
         }
 
         for (int i = 1; i <= N; ++i) {
-
-
             for (int j = 1; j <= N; ++j)
                 System.out.printf("%d ", dp[i][j][1]);
             System.out.println();
