@@ -11,22 +11,19 @@ public class dp_1965 {
         int ans = 1;
         for (int i = 1; i<= N; ++i) {
             box[i] = in.nextInt();
+            dp[0][i] = 1;
         }
 
         for (int i = 1; i <= N; ++i) {
-            for (int j = i + 1; j <= N; ++j) {
+            dp[i][i] = 1;
+            for (int j = i; j <= N; ++j) {
                 if (box[i] < box[j])
-                    dp[i][j] = dp[i-1][j] + 1;
+                    dp[i][j] = Math.max(dp[i][i] + 1, dp[i-1][j]);
                 else
                     dp[i][j] = dp[i-1][j];
-                ans = Math.max(ans, dp[i][N]);
+                ans = Math.max(ans, dp[i][j]);
             }
         }
-
-
-        for (int i = 1; i <= N; ++i) {
-            System.out.printf("%d ", dp[3][i]);
-        }
-        System.out.println(ans);
+        System.out.print(ans);
     }
 }
