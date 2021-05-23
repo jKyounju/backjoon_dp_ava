@@ -24,6 +24,12 @@ public class dp_1965 {
                 ans = Math.max(ans, dp[i][j]);
             }
         }
+
+        for(int i = 1; i <= N; ++i) {
+            for (int j = 1; j <= N; ++j)
+                System.out.printf("%d ", dp[i][j]);
+            System.out.println();
+        }
         System.out.print(ans);
     }
 }
